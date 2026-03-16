@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+skills
+./vscode/*.json
+.DS_Store
+bun.lock
+package-lock.json
