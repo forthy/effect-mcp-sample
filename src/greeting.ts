@@ -1,16 +1,10 @@
 import { Context, Effect, Layer } from "effect"
-
-export type GreetingResults = {
-  readonly content: Array<{
-    type: "text"
-    text: string
-  }>
-}
+import { CallToolResult } from "@modelcontextprotocol/sdk/types.js"
 
 export class GreetingService extends Context.Tag("GreetingService")<
   GreetingService,
   {
-    greet: (name: string) => Effect.Effect<GreetingResults>
+    greet: (name: string) => Effect.Effect<CallToolResult>
   }
 >() {
   static Live = Layer.succeed(GreetingService, {
